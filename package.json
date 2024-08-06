@@ -1,0 +1,16 @@
+{
+  "name": "another-regular-boring-chat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:wewilldieinspace/another-regular-boring-chat.git",
+  "author": "andrey <liqdes@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "concurrently \"npm run start:client\" \"npm run start:server\"",
+    "start:client": "webpack serve --config client/webpack.config.js",
+    "start:server": "ts-node-dev --respawn --transpile-only server/server.ts"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
