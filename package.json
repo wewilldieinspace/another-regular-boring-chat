@@ -6,9 +6,12 @@
   "author": "andrey <liqdes@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "concurrently \"npm run start:client\" \"npm run start:server\"",
-    "start:client": "webpack serve --config client/webpack.config.js",
-    "start:server": "ts-node-dev --respawn --transpile-only server/server.ts"
+    "start": "concurrently \"yarn client:start\" \"yarn server:start\"",
+    "client:start": "yarn --cwd client start",
+    "server:start": "yarn --cwd server start",
+    "start:dev": "concurrently \"yarn client:dev\" \"yarn server:dev\"",
+    "client:dev": "yarn --cwd client start:dev",
+    "server:dev": "yarn --cwd server start:dev"
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
